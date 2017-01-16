@@ -1,2 +1,5 @@
 node_modules/
 build/
+*.iws
+*workspace.xml
+.idea/tasks.xml
