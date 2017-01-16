@@ -1,5 +1,5 @@
 var config = {
-    entry: './main/index.jsx',
+    entry: './main/index.tsx',
     output: {
         filename: 'bundle.js',
         path: './build/'
@@ -10,9 +10,9 @@ var config = {
     module: {
         loaders: [
             {
-                test: /\.jsx?/,
+                test: /\.tsx?/,
                 include: /main/,
-                loader: "babel"
+                loaders: ["babel", 'ts-loader']
             }
         ]
     }

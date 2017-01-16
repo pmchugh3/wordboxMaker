@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es6",
+        "moduleResolution": "node",
+        "baseUrl": "main",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "outDir": "ts-build",
+        "jsx": "preserve"
+    },
+    "include": ["main/**/*"]
+}
