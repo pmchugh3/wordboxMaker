@@ -1,9 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Home extends React.Component<any, any> {
     render() {
         return (
-            <h1>HOME</h1>
-        )
-    };
+            <div>
+                <h1>HOME</h1>
+                <Link to="/words">Words</Link>
+            </div>
+        );
+    }
 }
