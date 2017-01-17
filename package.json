@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack --watch && webpack-dev-server --hot"
+    "start": "webpack --watch"
   },
   "devDependencies": {
     "@types/history": "2.0.45",
