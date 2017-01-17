@@ -1,12 +1,20 @@
 import {createStore} from 'redux';
 
-const wordReducer = function(state, action) {
+export interface State {
+    words: string[]
+}
+
+const wordReducer = function(state: State, action) {
+    if (state === undefined) {
+        return {
+            words:["SLEEPY", "DOPEY", "DOC", "BASHFUL", "SNEEZY", "GRUMPY", "HAPPY"]
+        }
+    }
     if (action) {
         console.log("we have an action");
     }
-    return state || ["SLEEPY", "DOPEY", "DOC", "BASHFUL", "SNEEZY", "GRUMPY", "HAPPY"];
+    return state;
 }
 
 const store = createStore(wordReducer);
-
 export default store;

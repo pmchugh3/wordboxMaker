@@ -1,8 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router'
 import {connect} from 'react-redux';
+import {State} from './Store';
 
-class Words extends React.Component<{ words: string[]}, string[]> {
+interface WordsProps {
+    words: string[]
+}
+
+class Words extends React.Component<WordsProps, State> {
     render() {
         const listItems = this.props.words.map((word) => this.wordRender(word));
         return (
@@ -21,12 +26,12 @@ class Words extends React.Component<{ words: string[]}, string[]> {
             <li>{word}</li>
         );
     }
-
-    public static mapStateToProps(state) {
-        return {
-            words: state
-        };
-    }
 }
 
-export default connect(Words.mapStateToProps)(Words);
+const mapStateToProps: (State) => WordsProps = (state) => {
+    return {
+        ...state
+    } as WordsProps;
+};
+
+export default connect(mapStateToProps)(Words);
