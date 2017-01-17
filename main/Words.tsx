@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router'
+import {connect} from 'react-redux';
 
-export default class Words extends React.Component<any, any> {
+class Words extends React.Component<{ words: string[]}, string[]> {
     render() {
-        const words: string[] = ["SLEEPY", "DOPEY", "DOC", "BASHFUL", "SNEEZY", "GRUMPY", "HAPPY"];
-        const listItems = words.map((word) => this.wordRender(word));
+        const listItems = this.props.words.map((word) => this.wordRender(word));
         return (
             <div>
                 <h2>WORDS!</h2>
@@ -21,4 +21,12 @@ export default class Words extends React.Component<any, any> {
             <li>{word}</li>
         );
     }
+
+    public static mapStateToProps(state) {
+        return {
+            words: state
+        };
+    }
 }
+
+export default connect(Words.mapStateToProps)(Words);

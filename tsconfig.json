@@ -4,7 +4,7 @@
         "target": "es6",
         "moduleResolution": "node",
         "baseUrl": "main",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
         "outDir": "ts-build",
