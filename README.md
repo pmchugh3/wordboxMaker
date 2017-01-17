@@ -8,8 +8,8 @@ A wordbox is a grid of letters that contains all of the words in a given list in
 but then must proceed either left, right, up or down for each subsequent letter. You cannot go diagonally or stay still but you can go back
 on yourself. So, given the following grid:
 
-| C | A | T |
-| A | B | E |
-| N | R | C |
+| C | A | T |  
+| A | B | E |  
+| N | R | C |  
 
 Cat, Cabe, Can and Banana are all valid words but Arc, Bett and Ben are not.
