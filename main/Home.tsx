@@ -6,7 +6,7 @@ export default class Home extends React.Component<any, any> {
         return (
             <div>
                 <h1>HOME</h1>
-                <Link to="/words">Words</Link>
+                <Link to="/wordlists">Words</Link>
             </div>
         );
     }
