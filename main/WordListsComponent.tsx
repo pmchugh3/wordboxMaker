@@ -5,13 +5,15 @@ import {State} from './Store';
 import WordList from "./WordList.ts";
 import WordListComponent from "./WordListComponent.tsx";
 import {DeleteWordAction, DeleteActionData} from "./DeleteWordAction.ts";
+import {AddWordAction, AddWordActionData} from "./AddWordAction.ts";
 
 interface WordListsProps {
     wordLists: WordList[]
 }
 
 interface DispatchProps {
-    deleteWord: (wordListName: string, word: string) => void
+    deleteWord: (wordListName: string, word: string) => void,
+    addWord: (wordListName: string, word: string) => void
 }
 
 class WordLists extends React.Component<WordListsProps & DispatchProps, State> {
@@ -35,6 +37,7 @@ class WordLists extends React.Component<WordListsProps & DispatchProps, State> {
                 <WordListComponent
                     {...wordList}
                     deleteWord={this.props.deleteWord}
+                    addWord={this.props.addWord}
                 />
             </div>
         )
@@ -52,7 +55,12 @@ const mapDispatchToProps = (dispatch) => ({
        const data = new DeleteActionData(word, wordListName);
        const action = new DeleteWordAction(data);
        dispatch(Object.assign({}, action));
-   }
+   },
+    addWord: (wordListName: string, word: string) => {
+        const data = new AddWordActionData(word, wordListName);
+        const action = new AddWordAction(data);
+        dispatch(Object.assign({}, action));
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WordLists);

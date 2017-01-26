@@ -5,9 +5,9 @@ import Word from './Word.ts';
 
 export default class WordList {
     name: string;
-    words: Word[];
+    words: Set<string>;
 
-    constructor(name: string, words: Word[]) {
+    constructor(name: string, words: Set<string>) {
         this.name = name;
         this.words = words;
     }

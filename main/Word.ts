@@ -3,10 +3,8 @@
  */
 export default class Word {
     public word: string;
-    public id: number;
 
-    constructor(word: string, id: number) {
+    constructor(word: string) {
         this.word = word;
-        this.id = id;
     }
 }
